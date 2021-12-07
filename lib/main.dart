@@ -1,8 +1,46 @@
 import 'package:english_words/english_words.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(App2());
 }
+
+class App2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "App Kedua",
+      home: Scaffold(
+        appBar: AppBar(title: Text("App Dua")),
+        body: Row(
+          children: [
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: CupertinoColors.systemTeal,
+              child: Text("gambar"),
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Column(children: [
+              Expanded(
+                child:  Row(children: [
+                Expanded(flex: 5, child: Container(color: CupertinoColors.systemBlue)),
+                Expanded(flex: 5, child: Container(color: CupertinoColors.systemGreen,))
+              ],)),
+              Expanded(child: Container(color: CupertinoColors.systemYellow)),
+            ],
+            )
+          )
+        ],
+        ),
+      )
+    );
+    
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -48,6 +86,8 @@ class _RandomWordsState extends State<RandomWords> {
         return _buildRow(_suggestions[index]);
       });
   }
+
+
 
   Widget _buildRow(WordPair pair) {
     return ListTile(
