@@ -73,7 +73,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             color: Color(0xFFEEEEEE),
                           ),
                           child: Text(
-                            'Hello World',
+                            'Halo Dunia',
                           ),
                         ),
                         Container(
